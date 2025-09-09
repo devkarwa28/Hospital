@@ -1,0 +1,51 @@
+.bread{
+    background: linear-gradient(90deg, #007bff, #00c6ff);
+    padding: 12px 0px;
+}
+.bread p{
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    color: white;
+    margin-bottom: 0px !important;
+}
+.loginform{
+    padding: 25px 0px;
+}
+.loginform form{
+    padding: 15px 12px;
+    border: 1px solid rgb(202, 197, 197);
+    border-radius: 4px;
+    box-shadow: 1px 1px 8px rgb(177, 177, 177);
+}
+.sidebar{
+    width: 20%;
+    border-right: 2px solid grey;
+}
+.sidebar ul li{
+    list-style: none;
+    text-align: center;
+    padding: 18px 0px;
+    border-bottom: 2px solid white;
+     background: linear-gradient(90deg, #6a11cb, #2575fc);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.sidebar ul li:hover{
+     transform: scale(1.05);
+  opacity: 0.9;
+}
+.sidebar ul li a{
+    text-decoration: none;
+    color:white;
+    font-weight: 700;
+}
+.outlet{
+    width: 80%;
+    padding: 20px 0px;
+}
+.addForm {
+    border: 1px solid gray;
+    padding: 12px 14px;
+    box-shadow: 2px 2px 12px grey;
+    width: 50%;
+}

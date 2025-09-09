@@ -1,0 +1,40 @@
+.breadcrums{
+    background: linear-gradient(90deg, #ff512f, #dd2476, #1e3c72, #2a5298);
+    padding: 20px 0px;
+    text-transform: capitalize;
+    color: white;
+    transition: background-color 1s ease-in-out;
+}
+.breadcrums:hover{
+    background: linear-gradient(90deg, #2a5298,#1e3c72,#dd2476,#ff512f);
+
+}
+.boxsd{
+    box-shadow: 5px 2px 15px grey;
+    border-radius: 10px;
+    padding: 10px 12px;
+}
+.boxsd p{
+    font-size: 18px;
+    font-weight: 600;
+}
+.card{
+    box-shadow: 0px 0px 15px grey;
+    transition: 300ms ease-in-out;
+}
+.card:hover{
+    transform: scale(1.05);
+}
+.aboutus{
+    padding: 16px 0px;
+    border-bottom: 1px solid #ff512f;
+}
+.aboutus h6{
+    color: #ff512f;
+    font-size: 26px;
+}
+.aboutus p{
+text-align: justify;
+line-height: 25px;
+margin-bottom: 0px;
+}
