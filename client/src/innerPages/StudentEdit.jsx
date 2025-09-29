@@ -4,7 +4,6 @@ import { useNavigate, useParams } from 'react-router-dom';
 import innerstyles from './innerpages.module.css';
 
 const StudentEdit = () => {
-    const [student, setStudent] = useState("");
     const [name, setName] = useState("");
     const [address, setAddress] = useState("");
     const [email, setEmail] = useState("");
@@ -23,7 +22,7 @@ const StudentEdit = () => {
             .catch((err) => {
                 console.log(err);
             })
-    },[]);
+    },[sid]);
     const updateHandler = (e) =>{
         e.preventDefault();
         axios.put(`http://localhost:4000/student/${sid}`,{name,email,address,mobile})

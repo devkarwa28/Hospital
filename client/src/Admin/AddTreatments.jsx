@@ -11,7 +11,8 @@ const AddTreatments = () => {
       .post("http://localhost:4000/treatments", { tname, tdesc })
       .then((res) => {
         alert("Treatment Added Successfully");
-        
+        setTname("")
+        setTdesc("")
       })
       .catch((err) => {
         alert("Unable To Add ????");
