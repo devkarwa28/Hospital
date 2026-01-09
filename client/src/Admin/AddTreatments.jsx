@@ -23,14 +23,23 @@ const AddTreatments = () => {
       <div className="d-flex justify-content-center">
         <form onSubmit={submitHandler} className={adminstyles.addForm}>
           <h2 className="text-center">Add Treatment</h2>
-          <input
+          <select
             className="form-control mb-3"
-            type="text"
-            value={tname}
             name="tname"
+            value={tname}
             onChange={(e) => setTname(e.target.value)}
-            placeholder="Enter Treatment Name"
-          />
+          >
+            <option value="">Select Treatment</option>
+            <option value="Consultation">Doctor Consultation</option>
+            <option value="ECG">ECG</option>
+            <option value="X-Ray">X-Ray</option>
+            <option value="MRI">MRI Scan</option>
+            <option value="CT Scan">CT Scan</option>
+            <option value="Blood Test">Blood Test</option>
+            <option value="Physiotherapy">Physiotherapy</option>
+            <option value="Vaccination">Vaccination</option>
+            <option value="Dialysis">Dialysis</option>
+          </select>
           <textarea
             className="form-control"
             type="text"

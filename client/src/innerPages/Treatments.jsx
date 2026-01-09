@@ -38,7 +38,7 @@ const Treatments = () => {
                     <Card.Body>
                       <Card.Title>{treat.tname}</Card.Title>
                       <Card.Text>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, unde. Ut ad dicta possimus ipsa impedit amet maxime vel fuga dignissimos, aspernatur, exercitationem 
+                        {treat.tdesc} 
                       </Card.Text>
                     </Card.Body>
                   </Card>

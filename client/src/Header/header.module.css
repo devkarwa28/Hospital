@@ -2,6 +2,10 @@
     background-color: #fefefe;
     box-shadow: 0px 0px 7px grey;
 }
+.header h2{
+  color: #980707;
+  font-weight: 700;
+}
 /* ===== Navbar hover effect ===== */
 .header nav {
   background-color: #fff; /* Default navbar color */
@@ -11,8 +15,11 @@
 
 /* Add shadow on hover */
 .header nav:hover {
-  border-bottom: 4px solid #ffa600; /* Change color if needed */
+  border-bottom: 4px solid #980707; /* Change color if needed */
   background-color: #f8f9fa; /* Optional slight background change */
+}
+.header ul{
+  margin-top: 8px;
 }
 .header ul li{
     list-style: none;
@@ -20,8 +27,9 @@
 }
 .header ul li a{
 font-size: 17px;
+font-weight: 600;
 text-decoration: none !important;
-    color: black;
+    color: #980707;
 }
 .header ul li{
     text-transform: capitalize;
@@ -34,8 +42,8 @@ text-decoration: none !important;
 
 .header ul li a {
   text-decoration: none;
-  color: #000; /* Change to match your design */
-  font-weight: 500;
+  color: #980707; /* Change to match your design */
+  font-weight: 700;
   position: relative;
   padding: 5px 0;
 }
@@ -48,7 +56,7 @@ text-decoration: none !important;
   height: 2px;
   left: 0;
   bottom: -2px; /* Position slightly below the text */
-  background-color: #ffbb00; /* Change color if needed */
+  background-color: #980707; /* Change color if needed */
   transition: width 0.3s ease-in-out; /* Smooth animation */
 }
 

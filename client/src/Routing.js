@@ -15,11 +15,14 @@ import EditTreatment from './Admin/EditTreatment'
 import Treatments from './innerPages/Treatments'
 import AboutUs from './innerPages/AboutUs'
 import Offers from './innerPages/Offers'
+import EditDoctor from './Admin/EditDoctor'
+import BookAppointment from './innerPages/BookAppointment'
 
 const Routing = () => {
   return (
     <Routes>
       <Route path='/treatments' element={<Treatments/>}/>
+      <Route path='/bookappointment' element={<BookAppointment/>}/>
       <Route path='/aboutus' element={<AboutUs/>}/>
       <Route path='/offers' element={<Offers/>}/>
         <Route path='/admin' element={<Admin/>}/>
@@ -33,6 +36,7 @@ const Routing = () => {
            <Route path='showappointments' element={<ShowAppointments/>}/>
            <Route path='updateappointments' element={<UpadteAppointments/>} />
            <Route path='edit_treatment/:tid' element={<EditTreatment/>}/>
+           <Route path='edit_doctor/:did' element={<EditDoctor/>}/>
         </Route>
         <Route path='/registeradmin' element={<RegisterAdmin/>}/>
     </Routes>
