@@ -1,2 +1,12 @@
-let mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost:27017/newDB");
+const mongoose = require("mongoose");
+
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => {
+    console.log("MongoDB connected successfully");
+  })
+  .catch((err) => {
+    console.error("MongoDB connection error:", err);
+  });
+
+module.exports = mongoose;

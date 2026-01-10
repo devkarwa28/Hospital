@@ -31,8 +31,6 @@ let appointmentSchema = new moongose.Schema({
     appointDate:{
         type: Date,
         required : true,
-        set: (v) => new Date(v + "T00:00:00")
-
     },
     timeing:{
         type: String,
