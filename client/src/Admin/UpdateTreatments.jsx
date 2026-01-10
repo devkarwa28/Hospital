@@ -17,8 +17,8 @@ const UpdateTreatments = () => {
       alert("Cannot Load Treatment Data")
     })
   })
-  const deleteHandler = (tid) =>{
-    axios.delete(`${API}/treatments/${tid}`)
+  const deleteHandler = (id) =>{
+    axios.delete(`${API}/treatments/${id}`)
     .then((res)=>{
       alert("Treatment Deleted Sucessfully");
     })

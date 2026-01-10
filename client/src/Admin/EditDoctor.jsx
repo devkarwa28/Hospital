@@ -11,10 +11,10 @@ function EditDoctor() {
     const [doctorDepartment, setDoctorDepartment] = useState("");
     const [doctorQualification, setDoctorQualification] = useState("");
     const [doctorExp, setDoctorExp] = useState("");
-    const { did } = useParams();
+    const { id } = useParams();
     const navigate = useNavigate();
     useEffect(() => {
-        axios.get(`${API}/doctors/${did}`)
+        axios.get(`${API}/doctors/${id}`)
             .then((res) => {
                 setDoctorName(res.data.doctorName);
                 setDoctorSpecs(res.data.doctorSpecs);
@@ -28,7 +28,7 @@ function EditDoctor() {
     }, [did]);
     const submitHandler = (event) =>{
         event.preventDefault();
-        axios.put(`${API}/doctors/${did}`,{doctorName,doctorSpecs,doctorDepartment,doctorQualification,doctorExp})
+        axios.put(`${API}/doctors/${id}`,{doctorName,doctorSpecs,doctorDepartment,doctorQualification,doctorExp})
         .then((res)=>{
             alert("Doctor's Data Updated Sucessfully")
             navigate("/admindashboard/updatedoctors")

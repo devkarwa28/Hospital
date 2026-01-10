@@ -16,8 +16,8 @@ const UpdateDoctors = () => {
       alert("Cannot Fetch Doctor's Data")
     })
   })
-  const deleteHandler = (did) =>{
-    axios.delete(`${API}/doctors/${did}`)
+  const deleteHandler = (id) =>{
+    axios.delete(`${API}/doctors/${id}`)
     .then((res)=>{
       alert("Successfully Deleted Doctor's Record")
     })
