@@ -37,8 +37,8 @@ const Routing = () => {
            <Route path='updateoffer' element={<UpdateOffers/>}/>
            <Route path='showappointments' element={<ShowAppointments/>}/>
            <Route path='updateappointments' element={<UpadteAppointments/>} />
-           <Route path='edit_treatment/:id' element={<EditTreatment/>}/>
-           <Route path='edit_doctor/:id' element={<EditDoctor/>}/>
+           <Route path='edit_treatment/:tid' element={<EditTreatment/>}/>
+           <Route path='edit_doctor/:did' element={<EditDoctor/>}/>
         </Route>
         <Route path='/registeradmin' element={<RegisterAdmin/>}/>
     </Routes>
