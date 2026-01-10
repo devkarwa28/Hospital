@@ -25,9 +25,9 @@ treatmentRouting.get("/treatments",async (req,res)=>{
         res.status(500).json({ error: "Server error" });
     }
 });
-treatmentRouting.get("/treatments/:tid",async(req,res)=>{
+treatmentRouting.get("/treatments/:id",async(req,res)=>{
     try{
-        let treatment = await Treatment.findOne({_id:req.params.tid});
+        let treatment = await Treatment.findOne({_id:req.params.id});
         res.send(treatment);
     }
     catch(err){
@@ -35,9 +35,9 @@ treatmentRouting.get("/treatments/:tid",async(req,res)=>{
         res.status(500).json({ error: "Server error" });
     }
 })
-treatmentRouting.put("/treatments/:tid", async (req,res)=>{
+treatmentRouting.put("/treatments/:id", async (req,res)=>{
     try{
-        let treatment = await Treatment.updateOne({_id:req.params.tid},{$set : req.body});
+        let treatment = await Treatment.updateOne({_id:req.params.id},{$set : req.body});
         res.send(treatment);
     }
     catch(err){
@@ -45,9 +45,9 @@ treatmentRouting.put("/treatments/:tid", async (req,res)=>{
         res.status(500).json({ error: "Server error" });
     }
 })
-treatmentRouting.delete("/treatments/:tid", async (req,res)=>{
+treatmentRouting.delete("/treatments/:id", async (req,res)=>{
     try{
-        let treatment = await Treatment.deleteOne({_id:req.params.tid});
+        let treatment = await Treatment.deleteOne({_id:req.params.id});
         res.send(treatment);
     }
     catch(err){
