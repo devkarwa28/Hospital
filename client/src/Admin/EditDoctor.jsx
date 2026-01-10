@@ -25,7 +25,7 @@ function EditDoctor() {
             .catch((err) => {
                 console.log(err)
             })
-    }, [did]);
+    }, [id]);
     const submitHandler = (event) =>{
         event.preventDefault();
         axios.put(`${API}/doctors/${id}`,{doctorName,doctorSpecs,doctorDepartment,doctorQualification,doctorExp})
