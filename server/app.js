@@ -8,7 +8,7 @@ const appointmentRouting = require("./router/appointmentRouting");
 let app = express();
 require("./db/dbconfig")
 //CORS 
-app.use(cors());
+app.use(cors({ origin: true }));
 // BODY PARSER
 app.use(express.json());
 app.use("/",signupRouting);
