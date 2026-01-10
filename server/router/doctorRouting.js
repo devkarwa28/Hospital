@@ -11,6 +11,7 @@ doctorRouting.post("/doctors",async(req, res) =>{
     }
     catch(err){
         console.log(err)
+        res.status(500).json({ error: "Server error" });
     }
 })
 doctorRouting.get("/doctors",async(req,res)=>{
@@ -20,6 +21,7 @@ doctorRouting.get("/doctors",async(req,res)=>{
     }
     catch(err){
         console.log(err)
+        res.status(500).json({ error: "Server error" });
     }
 });
 doctorRouting.get("/doctors/:did",async(req,res)=>{
@@ -29,6 +31,7 @@ doctorRouting.get("/doctors/:did",async(req,res)=>{
     }
     catch(err){
         console.log(err)
+        res.status(500).json({ error: "Server error" });
     }
 });
 doctorRouting.put("/doctors/:did",async(req,res)=>{
@@ -38,6 +41,7 @@ doctorRouting.put("/doctors/:did",async(req,res)=>{
     }
     catch(err){
         console.log(err)
+        res.status(500).json({ error: "Server error" });
     }
 })
 doctorRouting.delete("/doctors/:did",async(req,res)=>{
@@ -47,6 +51,7 @@ doctorRouting.delete("/doctors/:did",async(req,res)=>{
     }
     catch(err){
         console.log(err)
+        res.status(500).json({ error: "Server error" });
     }
 })
 module.exports = doctorRouting;
