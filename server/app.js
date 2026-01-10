@@ -7,8 +7,17 @@ const doctorRouting = require("./router/doctorRouting");
 const appointmentRouting = require("./router/appointmentRouting");
 let app = express();
 require("./db/dbconfig")
+const corsOptions = {
+  origin: ["https://hospital-chi-bay.vercel.app"],
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true,
+};
+//CORS 
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions));
 
-app.use(cors())
+// BODY PARSER
 app.use(express.json());
 app.use("/",signupRouting);
 app.use("/",treatmentRouting);
