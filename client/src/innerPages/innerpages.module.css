@@ -92,6 +92,22 @@ margin-bottom: 0px;
     width: 100%;
     height: 100px;
 }
+.appointment form button{
+    width: 180px;
+  padding: 8px 4px;
+  margin: auto;
+  margin-top: 24px;
+  border-radius: 5px;
+  background-color: #980707;
+  color: white;
+  font-weight: 600;
+  border: 2px solid #980707;
+  transition: 500ms;
+}
+.appointment form button:hover{
+    color: #980707;
+    background-color: white;
+}
 .appointment form textarea:focus{
     outline: #980707;
 }

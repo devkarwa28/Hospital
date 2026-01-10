@@ -1,5 +1,5 @@
 .bread{
-    background: linear-gradient(90deg, #007bff, #00c6ff);
+    background: #980707;
     padding: 12px 0px;
 }
 .bread p{
@@ -27,7 +27,7 @@
     text-align: center;
     padding: 18px 0px;
     border-bottom: 2px solid white;
-     background: linear-gradient(90deg, #6a11cb, #2575fc);
+     background: #980707;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 .sidebar ul li:hover{
@@ -45,7 +45,23 @@
 }
 .addForm {
     border: 1px solid gray;
-    padding: 12px 14px;
+    padding: 24px 28px;
     box-shadow: 2px 2px 12px grey;
     width: 50%;
+    background-color: #980707;
+}
+.addForm h2{
+    color: white    ;
+}
+.addForm input::placeholder{
+    color: #980707;
+    font-weight: 600;
+}
+.addForm select option{
+    color: #980707;
+    font-weight: 600;
+}
+.outlet table th{
+    background-color: #980707;
+    color: white;
 }

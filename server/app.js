@@ -5,6 +5,7 @@ const signupRouting = require("./router/signupRouting");
 const treatmentRouting = require("./router/treatmentRouting");
 const offerRouting = require("./router/offerRouting");
 const doctorRouting = require("./router/doctorRouting");
+const appointmentRouting = require("./router/appointmentRouting");
 let app = express();
 require("./db/dbconfig")
 
@@ -15,5 +16,6 @@ app.use("/",signupRouting);
 app.use("/",treatmentRouting);
 app.use("/",offerRouting);
 app.use("/",doctorRouting);
+app.use("/",appointmentRouting)
 
-app.listen(4000,()=>console.log("Server Started at Port 4000"));
+app.listen(5000,()=>console.log("Server Started at Port 5000"));
