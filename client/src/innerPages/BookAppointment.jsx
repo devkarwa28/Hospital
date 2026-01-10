@@ -3,6 +3,8 @@ import innerstyles from "./innerpages.module.css";
 import axios from "axios";
 
 const BookAppointment = () => {
+    const API = process.env.REACT_APP_API_URL;
+
   const [pName, setPname] = useState("");
   const [gender, setGender] = useState("");
   const [mobile, setMobile] = useState("");
@@ -15,7 +17,7 @@ const BookAppointment = () => {
   const [medicalConcern, setMedicalConcern] = useState("");
   const submitHandler = (event) =>{
     event.preventDefault();
-    axios.post("http://localhost:4000/appointments",{pName,gender,mobile,email,address,expa,service,appointDate,timeing,medicalConcern})
+    axios.post(`${API}/appointments`,{pName,gender,mobile,email,address,expa,service,appointDate,timeing,medicalConcern})
     .then((res)=>{
         alert("Appointment Registerd Successfully")
         setPname("");

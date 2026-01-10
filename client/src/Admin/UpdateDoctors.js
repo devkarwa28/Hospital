@@ -4,9 +4,11 @@ import Table from 'react-bootstrap/Table';
 import { NavLink } from 'react-router-dom';
 
 const UpdateDoctors = () => {
+  const API = process.env.REACT_APP_API_URL;
   const [doctor,setDoctor] = useState([])
+
   useEffect(()=>{
-    axios.get("http://localhost:4000/doctors")
+    axios.get(`${API}/doctors`)
     .then((res)=>{
       setDoctor(res.data)
     })
@@ -15,7 +17,7 @@ const UpdateDoctors = () => {
     })
   })
   const deleteHandler = (did) =>{
-    axios.delete(`http://localhost:4000/doctors/${did}`)
+    axios.delete(`${API}/doctors/${did}`)
     .then((res)=>{
       alert("Successfully Deleted Doctor's Record")
     })

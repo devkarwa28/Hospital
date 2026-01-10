@@ -3,11 +3,13 @@ import adminstyles from "./admin.module.css";
 import axios from 'axios';
 
 const AddOffers = () => {
+  const API = process.env.REACT_APP_API_URL;
+
   const [oname, setOname] = useState("");
   const [odesc,setOdesc] = useState("");
   const submitHandler  = (e) =>{
     e.preventDefault();
-    axios.post("http://localhost:4000/offer",{oname,odesc})
+    axios.post(`${API}/offer`,{oname,odesc})
     .then((res)=>{
       alert("Offer Added Successfully")
       setOname("")

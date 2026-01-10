@@ -3,12 +3,14 @@ import adminstyles from "./admin.module.css";
 import { useState } from "react";
 import axios from "axios";
 const AddTreatments = () => {
+  const API = process.env.REACT_APP_API_URL;
+  
   const [tname, setTname] = useState("");
   const [tdesc, setTdesc] = useState("");
   const submitHandler = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:4000/treatments", { tname, tdesc })
+      .post(`${API}/treatments`, { tname, tdesc })
       .then((res) => {
         alert("Treatment Added Successfully");
         setTname("")

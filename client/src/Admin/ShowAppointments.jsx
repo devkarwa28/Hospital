@@ -3,9 +3,10 @@ import React, { useEffect, useState } from 'react'
 import Table from 'react-bootstrap/esm/Table'
 
 const ShowAppointments = () => {
+  const API = process.env.REACT_APP_API_URL;
   const [appointment,setAppointment] = useState([]);
   useEffect(()=>{
-    axios.get("http://localhost:4000/appointments")
+    axios.get(`${API}/appointments`)
     .then((res)=>{
       setAppointment(res.data)
     })

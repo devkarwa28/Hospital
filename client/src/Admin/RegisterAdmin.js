@@ -4,6 +4,8 @@ import adminstyles from './admin.module.css';
 import { useNavigate } from 'react-router-dom';
 
 const RegisterAdmin = () => {
+  const API = process.env.REACT_APP_API_URL;
+
   const [email, setEmail] = useState("");
   const[name,setName] = useState("");
   const[address,setAddress] = useState("");
@@ -18,7 +20,7 @@ const RegisterAdmin = () => {
   };
   const submitHandler = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:4000/signup",{name,email,password,address})
+    axios.post(`${API}/signup`,{name,email,password,address})
     .then((res)=>{
       alert("Admin Registered Successfully")
       navigate("/admin")

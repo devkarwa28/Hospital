@@ -4,12 +4,14 @@ import adminstyles from "./admin.module.css";
 import axios from 'axios';
 
 const EditTreatment = () => {
+  const API = process.env.REACT_APP_API_URL;
+
   const [tname,setTname] = useState("")
   const[tdesc,setTdesc] = useState("");
   const {tid} = useParams(); 
   const navigate = useNavigate();
     useEffect(()=>{
-      axios.get(`http://localhost:4000/treatments/${tid}`)
+      axios.get(`${API}/treatments/${tid}`)
       .then((res)=>{
         setTname(res.data.tname);
         setTdesc(res.data.tdesc);
@@ -20,7 +22,7 @@ const EditTreatment = () => {
     },[tid]);
     const submitHandler = (e) =>{
       e.preventDefault();
-      axios.put(`http://localhost:4000/treatments/${tid}`,{tname,tdesc})
+      axios.put(`${API}/treatments/${tid}`,{tname,tdesc})
       .then((res)=>{
         alert("Treatments Upadted Sucessfully")
         navigate("/admindashboard/updatetreatments")

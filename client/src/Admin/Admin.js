@@ -3,6 +3,8 @@ import adminstyles from "./admin.module.css";
 import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
 const Admin = () => {
+  const API = process.env.REACT_APP_API_URL;
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -13,7 +15,7 @@ const Admin = () => {
   };
   const submitHandler = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:4000/login",{email,password})
+    axios.post(`${API}/login`,{email,password})
     .then((res)=>{
       if(res.data==="valid"){
         navigate("/admindashboard")

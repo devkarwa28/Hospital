@@ -4,6 +4,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 import adminstyles from "./admin.module.css";
 
 function EditDoctor() {
+    const API = process.env.REACT_APP_API_URL;
+
     const [doctorName, setDoctorName] = useState("");
     const [doctorSpecs, setDoctorSpecs] = useState("");
     const [doctorDepartment, setDoctorDepartment] = useState("");
@@ -12,7 +14,7 @@ function EditDoctor() {
     const { did } = useParams();
     const navigate = useNavigate();
     useEffect(() => {
-        axios.get(`http://localhost:4000/doctors/${did}`)
+        axios.get(`${API}/doctors/${did}`)
             .then((res) => {
                 setDoctorName(res.data.doctorName);
                 setDoctorSpecs(res.data.doctorSpecs);
@@ -26,7 +28,7 @@ function EditDoctor() {
     }, [did]);
     const submitHandler = (event) =>{
         event.preventDefault();
-        axios.put(`http://localhost:4000/doctors/${did}`,{doctorName,doctorSpecs,doctorDepartment,doctorQualification,doctorExp})
+        axios.put(`${API}/doctors/${did}`,{doctorName,doctorSpecs,doctorDepartment,doctorQualification,doctorExp})
         .then((res)=>{
             alert("Doctor's Data Updated Sucessfully")
             navigate("/admindashboard/updatedoctors")

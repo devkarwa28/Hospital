@@ -6,9 +6,10 @@ import Table from 'react-bootstrap/Table';
 import { NavLink } from 'react-router-dom';
 
 const UpdateTreatments = () => {
+  const API = process.env.REACT_APP_API_URL;
   const [treatment,setTreatment] = useState([]);
   useEffect(()=>{
-    axios.get("http://localhost:4000/treatments")
+    axios.get(`${API}/treatments`)
     .then((res)=>{
       setTreatment(res.data)
     })
@@ -17,7 +18,7 @@ const UpdateTreatments = () => {
     })
   })
   const deleteHandler = (tid) =>{
-    axios.delete(`http://localhost:4000/treatments/${tid}`)
+    axios.delete(`${API}/treatments/${tid}`)
     .then((res)=>{
       alert("Treatment Deleted Sucessfully");
     })

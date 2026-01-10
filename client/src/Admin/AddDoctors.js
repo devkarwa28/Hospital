@@ -3,6 +3,7 @@ import adminstyles from "./admin.module.css";
 import React, { useState } from "react";
 
 const AddDoctors = () => {
+  const API = process.env.REACT_APP_API_URL;
   const [doctorName, setDoctorName] = useState("");
   const [doctorSpecs, setDoctorSpecs] = useState("");
   const [doctorDepartment, setDoctorDepartment] = useState("");
@@ -11,7 +12,7 @@ const AddDoctors = () => {
   const submitHandler = (event) => {
     event.preventDefault();
     axios
-      .post("http://localhost:4000/doctors", {
+      .post(`${API}/doctors`,{
         doctorName,
         doctorSpecs,
         doctorDepartment,

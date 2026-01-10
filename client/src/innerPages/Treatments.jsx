@@ -4,10 +4,13 @@ import Card from "react-bootstrap/Card";
 import axios from "axios";
 
 const Treatments = () => {
+  const API = process.env.REACT_APP_API_URL;
+
   const [treatment, setTreatment] = useState([]);
+
   useEffect(() => {
     axios
-      .get("http://localhost:4000/treatments")
+      .get(`${API}/treatments`)
       .then((res) => {
         setTreatment(res.data);
       })
