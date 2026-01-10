@@ -8,5 +8,6 @@ mongoose
   .catch((err) => {
     console.error("MongoDB connection error:", err);
   });
+console.log("Mongo URI is:", process.env.MONGO_URI);
 
 module.exports = mongoose;
