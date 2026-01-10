@@ -24,9 +24,9 @@ doctorRouting.get("/doctors",async(req,res)=>{
         res.status(500).json({ error: "Server error" });
     }
 });
-doctorRouting.get("/doctors/:id",async(req,res)=>{
+doctorRouting.get("/doctors/:did",async(req,res)=>{
     try{
-        let doctor = await Doctor.findOne({_id:req.params.id});
+        let doctor = await Doctor.findOne({_id:req.params.did});
         res.send(doctor);
     }
     catch(err){
@@ -34,9 +34,9 @@ doctorRouting.get("/doctors/:id",async(req,res)=>{
         res.status(500).json({ error: "Server error" });
     }
 });
-doctorRouting.put("/doctors/:id",async(req,res)=>{
+doctorRouting.put("/doctors/:did",async(req,res)=>{
     try{
-        let doctor = await Doctor.updateOne({_id:req.params.id},{$set:req.body})
+        let doctor = await Doctor.updateOne({_id:req.params.did},{$set:req.body})
         res.send(doctor)
     }
     catch(err){
@@ -44,9 +44,9 @@ doctorRouting.put("/doctors/:id",async(req,res)=>{
         res.status(500).json({ error: "Server error" });
     }
 })
-doctorRouting.delete("/doctors/:id",async(req,res)=>{
+doctorRouting.delete("/doctors/:did",async(req,res)=>{
     try{
-        let doctor = await Doctor.deleteOne({_id:req.params.id});
+        let doctor = await Doctor.deleteOne({_id:req.params.did});
         res.send(doctor)
     }
     catch(err){

@@ -8,10 +8,10 @@ const EditTreatment = () => {
 
   const [tname,setTname] = useState("")
   const[tdesc,setTdesc] = useState("");
-  const {id} = useParams(); 
+  const {tid} = useParams(); 
   const navigate = useNavigate();
     useEffect(()=>{
-      axios.get(`${API}/treatments/${id}`)
+      axios.get(`${API}/treatments/${tid}`)
       .then((res)=>{
         setTname(res.data.tname);
         setTdesc(res.data.tdesc);
@@ -19,10 +19,10 @@ const EditTreatment = () => {
       .catch((err)=>{
         console.log(err)
       })
-    },[id]);
+    },[tid]);
     const submitHandler = (e) =>{
       e.preventDefault();
-      axios.put(`${API}/treatments/${id}`,{tname,tdesc})
+      axios.put(`${API}/treatments/${tid}`,{tname,tdesc})
       .then((res)=>{
         alert("Treatments Upadted Sucessfully")
         navigate("/admindashboard/updatetreatments")
