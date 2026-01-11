@@ -11,12 +11,9 @@ require("./db/dbconfig")
 // ✅ CORS — MUST be FIRST
 app.use(cors({
   origin: "https://hospital-chi-bay.vercel.app",
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"],
 }));
-
-// ✅ Handle preflight explicitly
-app.options("/*", cors());
 
 app.use(express.json());
 app.use("/",signupRouting);
