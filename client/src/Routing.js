@@ -18,12 +18,14 @@ import Offers from './innerPages/Offers'
 import EditDoctor from './Admin/EditDoctor'
 import BookAppointment from './innerPages/BookAppointment'
 import Home from './innerPages/Home'
+import ContactUS from './innerPages/ContactUS'
 
 const Routing = () => {
   return (
     <Routes>
       <Route path='/' element={<Home/>}/>
       <Route path='/treatments' element={<Treatments/>}/>
+      <Route path='/contactus' element={<ContactUS/>}/>
       <Route path='/bookappointment' element={<BookAppointment/>}/>
       <Route path='/aboutus' element={<AboutUs/>}/>
       <Route path='/offers' element={<Offers/>}/>
