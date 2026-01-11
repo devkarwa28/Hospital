@@ -23,6 +23,7 @@ const ContactUS = () => {
     })
     .catch((err)=>{
       console.log(err)
+      alert("Can't Send The Message")
     })
   }
   return (
