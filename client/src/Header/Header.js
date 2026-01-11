@@ -42,7 +42,7 @@ const Header = () => {
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to='/deletestudents'>
+                        <NavLink to='/contactus'>
                             Contact Us
                         </NavLink>
                     </li>
