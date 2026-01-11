@@ -7,12 +7,15 @@ contactRouting.post("/contact",async(req,res)=>{
     const {yName,mobile,email,enquiryType,specialRequest} = req.body;
     try{
         const transporter = nodemailer.createTransport({
-            service: "gmail",
+            service: "smtp.gmail.com",
+            port: 465,
+            secure: true,
             auth: {
                 user: process.env.MAIL_USER,
                 pass: process.env.MAIL_PASS,
             },
         });
+        await transporter.verify(); //catches auth errors early
         const mailOptions = {
             from: `"Hospital Website" <${process.env.MAIL_USER}>`,
             to: process.env.MAIL_USER,
