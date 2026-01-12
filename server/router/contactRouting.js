@@ -7,9 +7,7 @@ contactRouting.post("/contact",async(req,res)=>{
     const {yName,mobile,email,enquiryType,specialRequest} = req.body;
     try{
         const transporter = nodemailer.createTransport({
-            service: "smtp.gmail.com",
-            port: 465,
-            secure: true,
+            service: "gmail",
             auth: {
                 user: process.env.MAIL_USER,
                 pass: process.env.MAIL_PASS,
