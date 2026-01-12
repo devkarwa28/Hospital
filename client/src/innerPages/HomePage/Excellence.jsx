@@ -3,6 +3,27 @@ import homestyles from './Home.module.css';
 import Slider from "react-slick";
 
 const Excellence = () => {
+    function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "none", }}
+      onClick={onClick}
+    />
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "none", }}
+      onClick={onClick}
+    />
+  );
+}
     var settings = {
         dots: false,
         infinite: true,
@@ -13,8 +34,8 @@ const Excellence = () => {
         autoplay: true,
         autoplaySpeed: 1000,
         cssEase: "linear",
-        nextArrow: false,
-    prevArrow: false
+        nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />
     };
   return (
     <section className={homestyles.excellence}>
