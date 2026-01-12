@@ -115,3 +115,43 @@ margin-bottom: 0px;
 .appointment form textarea:focus{
     outline: #980707;
 }
+@media (max-width: 576px){
+    .appointment h1{
+        font-size: 34px;
+        text-align: center;
+        padding-top: 15px;
+    }
+    .appointment h3{
+        font-size: 20px;
+        text-align: center;
+    }
+    .appointment{
+        padding: 20px 0px;
+    }
+    .appointment h2{
+        margin-bottom: 12px;
+        font-size: 24px;
+    }
+    .appointment p{
+        font-size: 14px;
+    text-align: center;
+    margin-top: 12px;
+    }
+    .appointment form p{
+        font-size: 14px;
+        text-align: center;
+    }
+    .appointment form{
+        padding: 18px 14px;
+        border-radius: 12px;
+    }
+    .appointment form input, .appointment form select{
+        padding: 10px;
+    }
+    .appointment form textarea{
+        outline: 2px solid #e3e3e3;
+    }
+    .appointment form textarea:focus{
+        outline: 2px solid #980707;
+    }
+}

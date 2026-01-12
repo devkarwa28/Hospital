@@ -40,7 +40,7 @@ const BookAppointment = () => {
       <div className="container">
         <div className="row">
           <div className="col-1"></div>
-          <div className="col-3">
+          <div className="col-12 col-lg-3">
             <h1>24 Hour Emergency</h1>
             <h3>ASSITANCE</h3>
             <p>
@@ -50,12 +50,12 @@ const BookAppointment = () => {
             </p>
           </div>
           <div className="col-1"></div>
-          <div className="col-7">
+          <div className="col-sm-12 col-lg-7">
             <form onSubmit={submitHandler}>
               <h2>Book An Appointment</h2>
               <h4>Personal Information</h4>
               <div className="row">
-                <div className="col-6">
+                <div className="col-12 col-lg-6">
                   <input
                     type="text"
                     value={pName}
@@ -64,7 +64,7 @@ const BookAppointment = () => {
                     placeholder="Patient Name"
                   />
                 </div>
-                <div className="col-6">
+                <div className="col-12 col-lg-6">
                   <select name="gender" value={gender} onChange={(e)=>setGender(e.target.value)}>
                     <option value="">Select Gender</option>
                     <option value="Male">Male</option>
@@ -72,16 +72,16 @@ const BookAppointment = () => {
                     <option value="Transgender">Transgender</option>
                   </select>
                 </div>
-                <div className="col-6">
+                <div className="col-12 col-lg-6">
                   <input type="text" name="mobile" value={mobile} onChange={(e)=>setMobile(e.target.value)} placeholder="Mobile No." />
                 </div>
-                <div className="col-6">
+                <div className="col-12 col-lg-6">
                   <input type="text" name="email" value={email} onChange={(e)=>setEmail(e.target.value)} placeholder="Email Address" />
                 </div>
-                <div className="col-6">
+                <div className="col-12 col-lg-6">
                   <input type="text" name="address" value={address} onChange={(e)=>setAddress(e.target.value)} placeholder="Address" />
                 </div>
-                <div className="col-6">
+                <div className="col-12 col-lg-6">
                   <select name="expa" value={expa} onChange={(e)=>setExpa(e.target.value)}>
                     <option value="">You are a Existing Patient</option>
                     <option value="Yes">Yes</option>
@@ -91,7 +91,7 @@ const BookAppointment = () => {
               </div>
               <h4 className="mt-3">Appointment Details</h4>
               <div className="row">
-                <div className="col-6">
+                <div className="col-12 col-lg-6">
                   <select name="service" value={service} onChange={(e)=>setService(e.target.value)}>
                     <option value="">Select Service</option>
                     <option value="general_medicine">General Medicine</option>
@@ -114,7 +114,7 @@ const BookAppointment = () => {
                     <option value="anesthesiology">Anesthesiology</option>
                   </select>
                 </div>
-                <div className="col-3">
+                <div className="col-6 col-lg-3">
                   <input
                     type="date"
                     name="appointDate"
@@ -122,7 +122,7 @@ const BookAppointment = () => {
                     onChange={(e)=>setAppointDate(e.target.value)}
                   />
                 </div>
-                <div className="col-3">
+                <div className="col-6 col-lg-3">
                   <select name="timing" value={timeing} onChange={(e)=>setTimeing(e.target.value)}>
                     <option value="">Time</option>
                     <option value="Morning">Morning</option>

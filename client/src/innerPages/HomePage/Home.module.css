@@ -5,3 +5,57 @@
 .slider h3{
     margin-bottom: 0px !important;
 }
+.excellence{
+    width: 100%;
+    background-color: #980707;
+    padding: 35px 0px;
+}
+.excellence h1{
+    font-size: 40px;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+}
+.excellence p{
+    font-size: 16px;
+    font-weight: 400;
+    color: white;
+    text-align: center;
+    padding: 0px 90px;
+    margin-bottom: 62px;
+}
+.excellence img{
+    width: 50px;
+    height: 50px;
+    margin-bottom: 12px;
+}
+.excellence h3{
+    color: white;
+    font-size: 16px;
+    font-weight: 800;
+    text-align: center;
+}
+@media (max-width: 576px){
+    .slider img{
+        height: 300px;
+    }
+    .excellence{
+        padding: 25px 0px;
+    }
+    .excellence h1{
+        font-size: 32px;
+        font-weight: 900;
+        margin-bottom: 16px;
+    }
+    .excellence p{
+        padding: 0px 15px;
+    }
+    .excellence img{
+        height: 75px;
+        width: 75px;
+        margin: auto;
+    }
+    .excellence h3{
+        margin-top: 12px;
+    }
+}

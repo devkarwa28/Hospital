@@ -30,8 +30,8 @@ const ContactUS = () => {
     <section className={innerstyles.appointment}>
           <div className="container">
             <div className="row">
-              <div className="col-1"></div>
-              <div className="col-4">
+              <div className="col-1 d-sm-none"></div>
+              <div className="col-sm-12 col-lg-4">
                 <h1>Contact Us</h1>
                 <h3>Get In Touch</h3>
                 <p>
@@ -39,21 +39,21 @@ const ContactUS = () => {
 Our aim is to provide our customers with the best medical facilities, constant care, and reliable support.
                 </p>
               </div>
-              <div className="col-7">
+              <div className="col-sm-12 col-lg-7">
                 <form onSubmit={submitHandler}>
                   <h2>We are ready to help you.</h2>
                   <p>If you have a query or a suggestion, please fill out the form below, and we will get back to you as early as possible.</p>
                   <div className="row">
-                    <div className="col-6">
+                    <div className="col-sm-12 col-lg-6">
                       <input type="text" name="yName" value={yName} onChange={(e)=>setYName(e.target.value)} placeholder="Your Name"/>
                     </div>
-                    <div className="col-6">
+                    <div className="col-sm-12 col-lg-6">
                       <input type="text" name="mobile" value={mobile} onChange={(e)=>setMobile(e.target.value)} placeholder="Phone No." />
                     </div>
-                    <div className='col-6'>
+                    <div className='col-sm-12 col-lg-6'>
                       <input type="text" name="email" value={email} onChange={(e)=>setEmail(e.target.value)} placeholder='Email Address'/>
                     </div>
-                    <div className="col-6">
+                    <div className="col-sm-12 col-lg-6">
                       <select name="enquiryType" value={enquiryType} onChange={(e)=>setEnquiryType(e.target.value)}>
                         <option value="">Enquiry Type</option>
                         <option value="Complaint">Complaint</option>
@@ -66,10 +66,12 @@ Our aim is to provide our customers with the best medical facilities, constant c
                     <div className='col-12'>
                       <textarea name="specialRequest" value={specialRequest} onChange={(e)=>setSpecialRequest(e.target.value)} placeholder='Special Request'></textarea>
                     </div>
-                  </div>
-                  <button type="submit">
+                    <div className='text-center'>
+                      <button type="submit">
                         Send
                     </button>
+                    </div>
+                  </div>
                 </form>
               </div>
             </div>
