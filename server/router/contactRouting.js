@@ -13,7 +13,6 @@ contactRouting.post("/contact",async(req,res)=>{
                 pass: process.env.MAIL_PASS,
             },
         });
-        await transporter.verify(); //catches auth errors early
         const mailOptions = {
             from: `"Hospital Website" <${process.env.MAIL_USER}>`,
             to: process.env.MAIL_USER,
