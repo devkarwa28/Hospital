@@ -10,7 +10,7 @@ contactRouting.post("/contact",async(req,res)=>{
     try{
         
         await resend.emails.send({
-            from: "Hospital Website",
+            from: "Hospital Website <onboarding@resend.dev>",
             to: ["devkarwa1973@outlook.com"],
             replyTo: email,
             subject: `New Contact - ${enquiryType}`,
