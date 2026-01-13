@@ -24,6 +24,30 @@ contactRouting.post("/contact",async(req,res)=>{
         <p><strong>Special Request:</strong></p>
         <p>${specialRequest}</p>`
         });
+
+        await resend.emails.send({
+      from: "Hospital Support <onboarding@resend.dev>",
+      to: [email], // user's email
+      subject: "Thank you for contacting Hospital",
+      html: `
+        <h2>Thank You, ${yName}!</h2>
+        <p>We have received your message.</p>
+
+        <p>
+          Our team will contact you shortly regarding your
+          <strong>${enquiryType}</strong>.
+        </p>
+
+        <hr/>
+
+        <p>
+          Regards,<br/>
+          <strong>Hospital Support Team</strong><br/>
+          📞 +91-7611077344<br/>
+          📧 devkarwa1973@outlook.com
+        </p>
+      `,
+    });
         res.status(200).json({message: "Message Sent Successfully"});
     }
     catch(err){
