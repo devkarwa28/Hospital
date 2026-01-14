@@ -12,7 +12,7 @@ require("./db/dbconfig")
 
 // ✅ CORS — MUST be FIRST
 app.use(cors({
-  origin: ["https://hospital-chi-bay.vercel.app","http://localhost:3000"],
+  origin: "https://hospital-chi-bay.vercel.app",
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"],
 }));
