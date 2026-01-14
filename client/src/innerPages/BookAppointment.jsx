@@ -6,7 +6,7 @@ import Alert from '@mui/material/Alert';
 const BookAppointment = () => {
   // API KEY
   const API = process.env.REACT_APP_API_URL;
-  
+
   // Form State Management
   const [pName, setPname] = useState("");
   const [gender, setGender] = useState("");
@@ -42,7 +42,8 @@ const BookAppointment = () => {
         setTimeout(() => setShowAlert(false), 5000);
       })
       .catch((err) => {
-        alert("Error");
+        setAlertType("error");
+        setShowAlert(true);
       })
   }
   return (
