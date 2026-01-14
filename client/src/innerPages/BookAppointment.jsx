@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import innerstyles from "./innerpages.module.css";
 import axios from "axios";
+import Alert from '@mui/material/Alert';
 
 const BookAppointment = () => {
-    const API = process.env.REACT_APP_API_URL;
-
+  // API KEY
+  const API = process.env.REACT_APP_API_URL;
+  
+  // Form State Management
   const [pName, setPname] = useState("");
   const [gender, setGender] = useState("");
   const [mobile, setMobile] = useState("");
@@ -15,11 +18,17 @@ const BookAppointment = () => {
   const [appointDate, setAppointDate] = useState("");
   const [timeing, setTimeing] = useState("");
   const [medicalConcern, setMedicalConcern] = useState("");
-  const submitHandler = (event) =>{
+
+  // Alert State Management 
+  const [alertType, setAlertType] = useState("success");
+  const [showAlert, setShowAlert] = useState(false);
+
+  const submitHandler = (event) => {
     event.preventDefault();
-    axios.post(`${API}/appointments`,{pName,gender,mobile,email,address,expa,service,appointDate,timeing,medicalConcern})
-    .then((res)=>{
-        alert("Appointment Registerd Successfully")
+    axios.post(`${API}/appointments`, { pName, gender, mobile, email, address, expa, service, appointDate, timeing, medicalConcern })
+      .then((res) => {
+        setAlertType("success");
+      setShowAlert(true);
         setPname("");
         setGender("");
         setMobile("");
@@ -30,13 +39,22 @@ const BookAppointment = () => {
         setAppointDate("");
         setTimeing("");
         setMedicalConcern("");
-    })
-    .catch((err)=>{
+        setTimeout(() => setShowAlert(false), 5000);
+      })
+      .catch((err) => {
         alert("Error");
-    })
+      })
   }
   return (
+
     <section className={innerstyles.appointment}>
+      {showAlert && (
+        <Alert severity={alertType} sx={{ mb: 2 }}>
+          {alertType === "success"
+            ? "Appointment booked successfully"
+            : "Something went wrong. Please try again"}
+        </Alert>
+      )}
       <div className="container">
         <div className="row">
           <div className="col-1"></div>
@@ -65,7 +83,7 @@ const BookAppointment = () => {
                   />
                 </div>
                 <div className="col-12 col-lg-6">
-                  <select name="gender" value={gender} onChange={(e)=>setGender(e.target.value)}>
+                  <select name="gender" value={gender} onChange={(e) => setGender(e.target.value)}>
                     <option value="">Select Gender</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
@@ -73,16 +91,16 @@ const BookAppointment = () => {
                   </select>
                 </div>
                 <div className="col-12 col-lg-6">
-                  <input type="text" name="mobile" value={mobile} onChange={(e)=>setMobile(e.target.value)} placeholder="Mobile No." />
+                  <input type="text" name="mobile" value={mobile} onChange={(e) => setMobile(e.target.value)} placeholder="Mobile No." />
                 </div>
                 <div className="col-12 col-lg-6">
-                  <input type="text" name="email" value={email} onChange={(e)=>setEmail(e.target.value)} placeholder="Email Address" />
+                  <input type="text" name="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email Address" />
                 </div>
                 <div className="col-12 col-lg-6">
-                  <input type="text" name="address" value={address} onChange={(e)=>setAddress(e.target.value)} placeholder="Address" />
+                  <input type="text" name="address" value={address} onChange={(e) => setAddress(e.target.value)} placeholder="Address" />
                 </div>
                 <div className="col-12 col-lg-6">
-                  <select name="expa" value={expa} onChange={(e)=>setExpa(e.target.value)}>
+                  <select name="expa" value={expa} onChange={(e) => setExpa(e.target.value)}>
                     <option value="">You are a Existing Patient</option>
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
@@ -92,7 +110,7 @@ const BookAppointment = () => {
               <h4 className="mt-3">Appointment Details</h4>
               <div className="row">
                 <div className="col-12 col-lg-6">
-                  <select name="service" value={service} onChange={(e)=>setService(e.target.value)}>
+                  <select name="service" value={service} onChange={(e) => setService(e.target.value)}>
                     <option value="">Select Service</option>
                     <option value="general_medicine">General Medicine</option>
                     <option value="general_surgery">General Surgery</option>
@@ -119,11 +137,11 @@ const BookAppointment = () => {
                     type="date"
                     name="appointDate"
                     value={appointDate}
-                    onChange={(e)=>setAppointDate(e.target.value)}
+                    onChange={(e) => setAppointDate(e.target.value)}
                   />
                 </div>
                 <div className="col-6 col-lg-3">
-                  <select name="timing" value={timeing} onChange={(e)=>setTimeing(e.target.value)}>
+                  <select name="timing" value={timeing} onChange={(e) => setTimeing(e.target.value)}>
                     <option value="">Time</option>
                     <option value="Morning">Morning</option>
                     <option value="Afternoon">Afternoon</option>
@@ -134,12 +152,12 @@ const BookAppointment = () => {
                   <textarea
                     name="medicalConcern"
                     value={medicalConcern}
-                    onChange={(e)=>setMedicalConcern(e.target.value)}
+                    onChange={(e) => setMedicalConcern(e.target.value)}
                     placeholder="Medical Concern"
                   ></textarea>
                 </div>
                 <button type="submit">
-                    Book Appointment
+                  Book Appointment
                 </button>
               </div>
             </form>

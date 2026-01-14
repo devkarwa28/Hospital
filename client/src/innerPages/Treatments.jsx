@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import innerstyles from "./innerpages.module.css";
 import Card from "react-bootstrap/Card";
 import axios from "axios";
+import Alert from '@mui/material/Alert';
+
 
 const Treatments = () => {
   const API = process.env.REACT_APP_API_URL;
