@@ -150,7 +150,7 @@ const BookAppointment = () => {
                     placeholder="Medical Concern"
                   ></textarea>
                 </div>
-                <button type="submit">
+                <button type="submit" className="mb-3">
                   Book Appointment
                 </button>
               </div>
