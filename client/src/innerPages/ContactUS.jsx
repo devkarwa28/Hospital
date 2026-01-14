@@ -33,6 +33,7 @@ const ContactUS = () => {
         setEmail("");
         setEnquiryType("");
         setSpecialRequest("");
+        setTimeout(() => setShowAlert(false), 5000);
       })
       .catch((err) => {
         setAlertType("error");
@@ -88,7 +89,7 @@ const ContactUS = () => {
               {showAlert && (
                 <Alert severity={alertType} sx={{ mb: 2 }}>
                   {alertType === "success"
-                    ? "Appointment booked successfully"
+                    ? "Contact Form Successfully Registerd"
                     : "Something went wrong. Please try again"}
                 </Alert>
               )}
