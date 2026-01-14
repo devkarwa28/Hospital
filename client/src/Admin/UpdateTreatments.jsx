@@ -34,6 +34,7 @@ const UpdateTreatments = () => {
             <tr>
               <th>Treatment Name</th>
               <th>Treatment Description</th>
+              <th>Services</th>
               <th>Added On</th>
               <th>Action</th>
             </tr>
