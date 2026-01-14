@@ -35,7 +35,7 @@ const Treatments = () => {
             {treatment.map((treat) => {
               return (
                 <>
-                  <div className="col-3">
+                  <div className=" col-12 col-lg-3">
                     <Card className={`mb-3 ${innerstyles.card}`}>
                     <Card.Img variant="top" />
                     <Card.Body>
