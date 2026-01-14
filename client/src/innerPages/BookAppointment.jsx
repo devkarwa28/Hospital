@@ -49,13 +49,6 @@ const BookAppointment = () => {
   return (
 
     <section className={innerstyles.appointment}>
-      {showAlert && (
-        <Alert severity={alertType} sx={{ mb: 2 }}>
-          {alertType === "success"
-            ? "Appointment booked successfully"
-            : "Something went wrong. Please try again"}
-        </Alert>
-      )}
       <div className="container">
         <div className="row">
           <div className="col-1"></div>
@@ -161,6 +154,13 @@ const BookAppointment = () => {
                   Book Appointment
                 </button>
               </div>
+              {showAlert && (
+        <Alert severity={alertType} sx={{ mb: 2 }}>
+          {alertType === "success"
+            ? "Appointment booked successfully"
+            : "Something went wrong. Please try again"}
+        </Alert>
+      )}
             </form>
           </div>
         </div>
