@@ -41,6 +41,17 @@ const Treatments = () => {
                     <Card.Body>
                       <Card.Title>{treat.tname}</Card.Title>
                       <Card.Text>
+                        {treat.services && treat.services.length > 0 ? (
+                        <ul className="mb-0">
+                          {treat.services.map((service, index) => (
+                            <li key={index}>{service}</li>
+                          ))}
+                        </ul>
+                      ) : (
+                        <span className="text-muted">No services</span>
+                      )}
+                      </Card.Text>
+                      <Card.Text>
                         {treat.tdesc} 
                       </Card.Text>
                     </Card.Body>
