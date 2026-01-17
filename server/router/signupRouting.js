@@ -41,7 +41,15 @@ signupRouting.post("/login", async (req,res)=>{
             res.send("Invalid Password")
         }
         else{
-            res.send("valid");
+            let payload ={
+                user:{
+                    id: exist._id
+                }
+            }
+            jwt.sign(payload,"JSON123String",{expiresIn: 360000},(err,token)=>{
+                if(err) throw err;
+                res.send(token);
+            })
         }
     }
     catch(err){
