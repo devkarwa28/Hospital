@@ -8,10 +8,10 @@ let signupRouting = express.Router();
 signupRouting.post("/signup",async (req,res)=>{
     try{
         let signup = new Signup({
-        name:req.body.name,
-        password: bcrypt.hashSync(req.body.password, 10),
+        name: req.body.name,
+        email: req.body.email,
         address: req.body.address,
-        phone: req.body.phone,
+        password: bcrypt.hashSync(req.body.password, 10),
         });
         let result = await signup.save();
         res.send(result);
