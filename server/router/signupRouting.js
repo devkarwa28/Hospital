@@ -21,7 +21,15 @@ signupRouting.post("/signup",async (req,res)=>{
         res.status(500).json({ error: "Server error" });
     }
 });
-
+signupRouting.get("/signup",async (req,res)=>{
+    try{
+        let signup = await Signup.find();
+        res.send(signup);
+    }
+    catch(err){
+        console.log(err)
+    }
+})
 signupRouting.post("/login", async (req,res)=>{
     try{
         const {email,password} = req.body;
