@@ -2,6 +2,7 @@ let express = require('express');
 let jwt = require('jsonwebtoken')
 let bcrypt = require('bcrypt');
 let Signup = require('../models/signupModel');
+const loginMiddleware = require('../Middleware/loginMiddleware');
 
 let signupRouting = express.Router();
 
@@ -48,7 +49,7 @@ signupRouting.post("/login", async (req,res)=>{
             };
             jwt.sign(payload,"JSON123String",{expiresIn: 360000},(err,token)=>{
                 if(err) throw err;
-                res.send(token);
+                res.send({token});
             });
         }
     }
@@ -56,6 +57,9 @@ signupRouting.post("/login", async (req,res)=>{
         console.log(err);
         res.status(500).json({ error: "Server error" });
     }
+})
+signupRouting.get("/admindashboard",loginMiddleware,async (req,res)=>{
+    res.send("Admin")
 })
 
 module.exports = signupRouting;
