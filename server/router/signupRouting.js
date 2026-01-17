@@ -1,11 +1,18 @@
 let express = require('express');
+let jwt = require('jsonwebtoken')
+let bcrypt = require('bcrypt');
 let Signup = require('../models/signupModel');
 
 let signupRouting = express.Router();
 
 signupRouting.post("/signup",async (req,res)=>{
     try{
-        let signup = new Signup(req.body);
+        let signup = new Signup({
+        name:req.body.name,
+        password: bcrypt.hashSync(req.body.password, 10),
+        address: req.body.address,
+        phone: req.body.phone,
+        });
         let result = await signup.save();
         res.send(result);
     }
@@ -22,7 +29,7 @@ signupRouting.post("/login", async (req,res)=>{
         if(!exist){
             res.send("Username Not Exist");
         }
-        else if(exist.password!==password){
+        else if(!bcrypt.compareSync(password, exist.password)){
             res.send("Invalid Password")
         }
         else{
