@@ -19,7 +19,7 @@ const EditTreatment = () => {
       .catch((err)=>{
         console.log(err)
       })
-    },[id]);
+    },[]);
     const submitHandler = (e) =>{
       e.preventDefault();
       axios.put(`${API}/treatments/${id}`,{tname,tdesc})
