@@ -5,12 +5,17 @@ import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import Routing from './Routing';
 
+export const store = useContext();
+
 const App = () => {
+  const [token,setToken] = useState("")
   return (
     <>
+    <store.Provider value={[token,setToken]}>
     <Header/>
     <Routing/>
     <Footer/>
+    </store.Provider>
     </>
   )
 }

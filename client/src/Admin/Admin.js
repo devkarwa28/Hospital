@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import adminstyles from "./admin.module.css";
 import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { store } from "../App";
 const Admin = () => {
   const API = process.env.REACT_APP_API_URL;
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [token, setToken] = useContext(store); 
   const navigate = useNavigate();
   const resetLogin = (e) => {
     e.preventDefault();
@@ -17,14 +19,16 @@ const Admin = () => {
     e.preventDefault();
     axios.post(`${API}/login`,{email,password})
     .then((res)=>{
-      if(res.data==="valid"){
-        navigate("/admindashboard")
-      }
-      else{
-        alert("Invalid Email Or Password")
-      }
+      setToken(res.data.token);
+    })
+    .catch((err)=>{
+      console.log(err);
     })
   };
+  if(token)
+  {
+    navigate("/admindashboard")
+  }
   return (
     <>
       <main>

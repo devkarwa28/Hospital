@@ -1,15 +1,38 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import adminstyles from './admin.module.css'
 import AdminSidebar from './AdminSidebar'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useNavigate } from 'react-router-dom'
+import { store } from '../App'
+import axios from 'axios'
 const AdminDashboard = () => {
+    const API = process.env.REACT_APP_API_URL;
+    const [data, setData] = useState("")
+    const [token, setToken] = useContext(store);
+    const navigate = useNavigate();
+    useEffect(()=>{
+        axios.get(`${API}/admindashboard`,{
+            headers:{
+                "x-token" : token,
+            }
+        })
+        .then((res)=>{
+            setData(res.data);
+        })
+        .catch((err)=>{
+            console.log(err);
+        })
+    });
+    if(!token)
+    {
+        navigate('/admin')
+    }
     return (
         <>
             <section className={adminstyles.bread}>
                 <div className="container">
                     <div className="row">
                         <div className="col-12">
-                            <p>Admin Dashboard</p>
+                            <p>{data}Admin Dashboard</p>
                         </div>
                     </div>
                 </div>
