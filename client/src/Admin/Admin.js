@@ -8,7 +8,7 @@ const Admin = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [token, setToken] = useContext(store); 
+  const [token, setToken] = useContext(store) 
   const navigate = useNavigate();
   const resetLogin = (e) => {
     e.preventDefault();
@@ -19,10 +19,7 @@ const Admin = () => {
     e.preventDefault();
     axios.post(`${API}/login`,{email,password})
     .then((res)=>{
-      setToken(res.data.token);
-    })
-    .catch((err)=>{
-      console.log(err);
+      setToken(res.data.token)
     })
   };
   if(token)
