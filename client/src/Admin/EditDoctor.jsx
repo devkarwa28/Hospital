@@ -2,10 +2,9 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 import adminstyles from "./admin.module.css";
+const API = process.env.REACT_APP_API_URL;
 
 function EditDoctor() {
-    const API = process.env.REACT_APP_API_URL;
-
     const [doctorName, setDoctorName] = useState("");
     const [doctorSpecs, setDoctorSpecs] = useState("");
     const [doctorDepartment, setDoctorDepartment] = useState("");

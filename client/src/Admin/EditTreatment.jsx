@@ -2,10 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 import adminstyles from "./admin.module.css";
 import axios from 'axios';
-
+const API = process.env.REACT_APP_API_URL;
 const EditTreatment = () => {
-  const API = process.env.REACT_APP_API_URL;
-
   const [tname,setTname] = useState("")
   const[tdesc,setTdesc] = useState("");
   const {id} = useParams(); 
