@@ -1,8 +1,11 @@
 import axios from 'axios';
-import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
 import Table from 'react-bootstrap/Table';
+import "datatables.net-dt/css/dataTables.dataTables.min.css";
+import "datatables.net-dt/js/dataTables.dataTables.min.js";
+import "jquery/dist/jquery.min.js"
+import $ from "jquery"
 import { NavLink } from 'react-router-dom';
 
 const UpdateTreatments = () => {
@@ -16,6 +19,9 @@ const UpdateTreatments = () => {
       .catch((err) => {
         alert("Cannot Load Treatment Data")
       })
+      setTimeout(() => {
+        $("#mytable").DataTable();
+      }, 2000);
   })
   const deleteHandler = (tid) => {
     axios.delete(`${API}/treatments/${tid}`)
@@ -29,7 +35,7 @@ const UpdateTreatments = () => {
   return (
     <div className='container'>
       <div className='w-100'>
-        <Table striped bordered hover>
+        <Table id='mytable' striped bordered hover>
           <thead>
             <tr>
               <th>Treatment Name</th>
