@@ -7,7 +7,7 @@ import axios from "axios";
 const AdminDashboard = () => {
   const API = process.env.REACT_APP_API_URL;
   const [data, setData] = useState("");
-  const [token, setToken] = useContext(store);
+  const [token] = useContext(store);
   const navigate = useNavigate();
   useEffect(() => {
     axios

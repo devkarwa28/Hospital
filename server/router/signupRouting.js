@@ -47,7 +47,7 @@ signupRouting.post("/login", async (req,res)=>{
                     id: exist._id
                 }
             };
-            jwt.sign(payload,"JSON123String",{expiresIn: 3600000000},(err,token)=>{
+            jwt.sign(payload,"JSON123String",{expiresIn: 36000000},(err,token)=>{
                 if(err) throw err;
                 res.send({token});
             });
