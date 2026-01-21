@@ -19,7 +19,11 @@ const Admin = () => {
     e.preventDefault();
     axios.post(`${API}/login`,{email,password})
     .then((res)=>{
+      localStorage.getItem("token",res.data.token)
       setToken(res.data.token)
+    })
+    .catch((err)=>{
+      alert("Invalid Login")
     })
   };
   if(token)

@@ -7,7 +7,9 @@ import Routing from './Routing';
 export const store = createContext();
 const App = () => {
   
-  const [token,setToken] = useState("");
+  const [token,setToken] = useState(()=>{
+    return localStorage.getItem("token")
+  });
   return (
     <>
     <store.Provider value={[token,setToken]}>

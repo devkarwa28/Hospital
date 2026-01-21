@@ -4,12 +4,17 @@ import AdminSidebar from "./AdminSidebar";
 import { Outlet, useNavigate } from "react-router-dom";
 import { store } from "../App";
 import axios from "axios";
+// API
+const API = process.env.REACT_APP_API_URL;
+
 const AdminDashboard = () => {
-  const API = process.env.REACT_APP_API_URL;
   const [data, setData] = useState("");
-  const [token] = useContext(store);
+  const [ token ] = useContext(store);
   const navigate = useNavigate();
   useEffect(() => {
+    if (!token) {
+      navigate("/admin");
+    }
     axios
       .get(`${API}/admindashboard`, {
         headers: {
@@ -21,11 +26,10 @@ const AdminDashboard = () => {
       })
       .catch((err) => {
         console.log(err);
+        localStorage.removeItem("token");
+        navigate("/admin");
       });
-    if (!token) {
-      navigate("/admin");
-    }
-  });
+  },[token,navigate]);
   return (
     <>
       <section className={adminstyles.bread}>
