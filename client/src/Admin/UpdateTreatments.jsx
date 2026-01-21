@@ -7,9 +7,9 @@ import "datatables.net-dt/js/dataTables.dataTables.min.js";
 import "jquery"
 import $ from "jquery"
 import { NavLink } from 'react-router-dom';
-
+ const API = process.env.REACT_APP_API_URL;
+ 
 const UpdateTreatments = () => {
-  const API = process.env.REACT_APP_API_URL;
   const [treatment, setTreatment] = useState([]);
   useEffect(() => {
     axios.get(`${API}/treatments`)
