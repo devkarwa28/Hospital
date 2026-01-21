@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Table from 'react-bootstrap/Table';
 import "datatables.net-dt/css/dataTables.dataTables.min.css";
 import "datatables.net-dt/js/dataTables.dataTables.min.js";
-import "jquery/dist/jquery.min.js"
+import "jquery"
 import $ from "jquery"
 import { NavLink } from 'react-router-dom';
 
@@ -22,7 +22,7 @@ const UpdateTreatments = () => {
       setTimeout(() => {
         $("#mytable").DataTable();
       }, 2000);
-  })
+  },[])
   const deleteHandler = (tid) => {
     axios.delete(`${API}/treatments/${tid}`)
       .then((res) => {
