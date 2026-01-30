@@ -10,7 +10,6 @@ const AddDoctors = () => {
   const [doctorDepartment, setDoctorDepartment] = useState("");
   const [doctorQualification, setDoctorQualification] = useState("");
   const [doctorExp, setDoctorExp] = useState("");
-  const [catname, setCatname] = useState("");
   const [image, setImage] = useState(null);
 
   const submitHandler = (event) => {
@@ -21,7 +20,6 @@ const AddDoctors = () => {
     formdata.append("doctorQualification", doctorQualification);
     formdata.append("doctorDepartment", doctorDepartment);
     formdata.append("doctorExp", doctorExp);
-    formdata.append("catname", "doctor");
     formdata.append("image", image);       
     axios
       .post(`${API}/doctors`, formdata,{
@@ -98,7 +96,6 @@ const AddDoctors = () => {
               onChange={(e) => setDoctorExp(e.target.value)}
               placeholder="Enter Doctor's Experince in Years"
             />
-            <input type="text" className="form-control mb-3" name="catname" value="doctor" onChange={(e) => setCatname(e.target.value)} />
 
             <input type="file" accept="image/*" required name="image" onChange={(e) => setImage(e.target.files[0])} />
             <div className="d-flex justify-content-end">
