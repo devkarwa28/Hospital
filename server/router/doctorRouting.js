@@ -1,11 +1,23 @@
 let express = require('express');
 let Doctor = require('../models/doctorModel');
-
+const { CloudinaryStorage } = require('multer-storage-cloudinary');
+const cloudinary = require("../config/cloudinary")
+let multer = require('multer');
 const doctorRouting = express.Router();
 
-doctorRouting.post("/doctors",async(req, res) =>{
+const storage = new CloudinaryStorage({
+    cloudinary,
+    params: {
+        folder: "hospital/doctors",
+        allowed_formats: ["jpg","png","jpeg","webp"]
+    },
+});
+const upload = multer({ storage: storage })
+
+doctorRouting.post("/doctors", upload.single("image"),async(req, res) =>{
     try{
-        let doctor = new Doctor(req.body);
+        const {path, filename} = req.file;
+        let doctor = new Doctor({...req.body, path, filename});
         let result = await doctor.save();
         res.send(result)
     }

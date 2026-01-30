@@ -8,7 +8,7 @@ import "jquery"
 import $ from "jquery"
 import { NavLink } from 'react-router-dom';
  const API = process.env.REACT_APP_API_URL;
- 
+
 const UpdateTreatments = () => {
   const [treatment, setTreatment] = useState([]);
   useEffect(() => {

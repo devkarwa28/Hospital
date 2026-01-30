@@ -3,6 +3,21 @@
     color: white;
     box-shadow: 0px 0px 9px gray;
 }
+.footer h2{
+    font-size: 22px;
+}
+.footer ul{
+padding-left: 12px;
+margin-top: 20px;
+}
+.footer ul li{
+    list-style: none;
+    padding: 4px 0px;
+}
+.footer ul li a{
+    text-decoration: none;
+    color: white;
+}
 .footer p{
     font-size: 16px;
     margin-bottom: 0px;

@@ -4,21 +4,30 @@ import React, { useState } from "react";
 
 const AddDoctors = () => {
   const API = process.env.REACT_APP_API_URL;
-  
+
   const [doctorName, setDoctorName] = useState("");
   const [doctorSpecs, setDoctorSpecs] = useState("");
   const [doctorDepartment, setDoctorDepartment] = useState("");
   const [doctorQualification, setDoctorQualification] = useState("");
   const [doctorExp, setDoctorExp] = useState("");
+  const [catname, setCatname] = useState("");
+  const [image, setImage] = useState(null);
+
   const submitHandler = (event) => {
     event.preventDefault();
+    const formdata = new FormData();
+    formdata.append("doctorName", doctorName);
+    formdata.append("doctorSpecs", doctorSpecs);
+    formdata.append("doctorQualification", doctorQualification);
+    formdata.append("doctorDepartment", doctorDepartment);
+    formdata.append("doctorExp", doctorExp);
+    formdata.append("catname", "doctor");
+    formdata.append("image", image);       
     axios
-      .post(`${API}/doctors`,{
-        doctorName,
-        doctorSpecs,
-        doctorDepartment,
-        doctorQualification,
-        doctorExp,
+      .post(`${API}/doctors`, formdata,{
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
       })
       .then((res) => {
         alert("Doctor Added Successfully");
@@ -27,6 +36,7 @@ const AddDoctors = () => {
         setDoctorDepartment("");
         setDoctorQualification("");
         setDoctorExp("");
+        setImage(null)
       })
       .catch((err) => {
         console.log("Unable To Add Doctor In Server");
@@ -88,6 +98,9 @@ const AddDoctors = () => {
               onChange={(e) => setDoctorExp(e.target.value)}
               placeholder="Enter Doctor's Experince in Years"
             />
+            <input type="text" className="form-control mb-3" name="catname" value="doctor" onChange={(e) => setCatname(e.target.value)} />
+
+            <input type="file" accept="image/*" required name="image" onChange={(e) => setImage(e.target.files[0])} />
             <div className="d-flex justify-content-end">
               <input
                 type="submit"
