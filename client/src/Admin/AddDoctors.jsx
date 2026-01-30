@@ -37,6 +37,7 @@ const AddDoctors = () => {
         setImage(null)
       })
       .catch((err) => {
+        alert("Unable to add doctor ")
         console.log("Unable To Add Doctor In Server");
       });
   };
