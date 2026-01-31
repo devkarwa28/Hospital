@@ -115,6 +115,72 @@ margin-bottom: 0px;
 .appointment form textarea:focus{
     outline: #980707;
 }
+.admission{
+    padding: 70px 0px;
+}
+.photo_box h1{
+    font-size: 38px;
+    font-weight: bolder;
+    padding-left: 32px;
+  border-left: 5px solid red;
+  padding-right: 68px;
+  margin-bottom: 18px;
+
+}
+.photo_box h2{
+    padding-left: 37px;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 500;
+}
+.photo_box h3{
+    color: #980707;
+    font-size: 25px;
+    font-weight: 700;
+    margin-top: 64px;
+}
+.photo_box p{
+    color: #3a3a3a;
+    font-size: 16px;
+    line-height: 1.5;
+}
+.admission h4{
+    color: #980707;
+    font-size: 35px;
+    font-weight: 600;
+    text-align: center;
+}
+.admission h5{
+    color: black;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 12px;
+}
+.admission ul li{
+    list-style: disclosure-closed;
+    margin: 4px 0px;
+}
+.rights{
+    padding: 70px 0px;
+}
+.rights h1{
+    font-size: 38px;
+    font-weight: 700;
+    color: black;
+    text-align: center;
+    margin-bottom: 32px;
+}
+.rights h1 span{
+    color: #980707;
+}
+.rights ul{
+    padding: 0px 70px;
+}
+.rights ul li{
+    list-style: disclosure-closed;
+    margin: 10px 0px;
+    font-size: 18px;
+}
 @media (max-width: 576px){
     .appointment h1{
         font-size: 34px;

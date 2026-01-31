@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 const Footer = () => {
   return (
     <footer className={footerstyles.footer}>
-        <section>
+        <section className={footerstyles.mainfooter}>
             <div className="container">
                 <div className="row">
                 <div className="col-lg-3">
@@ -44,12 +44,90 @@ const Footer = () => {
             </div>
             <div className="col-lg-3">
                 <h2>Multispeciality</h2>
+                
                 <ul>
-                    
+                    <li>
+                        <NavLink>
+                            General Medicine
+                        </NavLink>
+
+                    </li>
+                    <li>
+                        <NavLink>
+                            Gynecology
+                        </NavLink>
+                        
+                    </li>
+                    <li>
+                        <NavLink>
+                            Urology
+                        </NavLink>
+                        
+                    </li>
+                    <li>
+                        <NavLink>
+                            Nephrology
+                        </NavLink>
+                        
+                    </li>
+                    <li>
+                        <NavLink>
+                            Cardiac
+                        </NavLink>
+                        
+                    </li>
+                    <li>
+                        <NavLink>
+                            Neurology
+                        </NavLink>
+                        
+                    </li>
                 </ul>
             </div>
-            <div className="col-lg-3"></div>
-            <div className="col-lg-3"></div>
+            <div className="col-lg-3">
+                <h2>Patient Care</h2>
+                <ul>
+                    <li>
+                        <NavLink to='/addmission-discharge'>
+                            Admission & Discharge
+                        </NavLink>
+
+                    </li>
+                    <li>
+                        <NavLink to='/vistior-info'>
+                            Visitors Information
+                        </NavLink>
+                        
+                    </li>
+                    <li>
+                        <NavLink to='/patient-rights'>
+                            Patient Rights
+                        </NavLink>
+                        
+                    </li>
+                    <li>
+                        <NavLink to='/patient-responsibility'>
+                            Patient Responsibility
+                        </NavLink>
+                        
+                    </li>
+                    <li>
+                        <NavLink to='/emergency-trauma-care'>
+                            Emergency and Trauma Care
+                        </NavLink>
+                        
+                    </li>
+                    <li>
+                        <NavLink>
+                            Health Packages
+                        </NavLink>
+                        
+                    </li>
+                </ul>
+            </div>
+            <div className="col-lg-3">
+
+            </div>
             </div>
             </div>
         </section>

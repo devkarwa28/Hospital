@@ -3,6 +3,11 @@
     color: white;
     box-shadow: 0px 0px 9px gray;
 }
+.mainfooter{
+    border-bottom: 2px solid white;
+    border-top: 2px solid white;
+    padding: 60px 0px;
+}
 .footer h2{
     font-size: 22px;
 }

@@ -19,6 +19,11 @@ import EditDoctor from './Admin/EditDoctor'
 import BookAppointment from './innerPages/BookAppointment'
 import Home from './innerPages/Home'
 import ContactUS from './innerPages/ContactUS'
+import PatientsRespons from './innerPages/PatientsRespons'
+import PatientsRights from './innerPages/PatientsRights'
+import VisitorsInfo from './innerPages/VisitorsInfo'
+import AdmissionDischarge from './innerPages/AdmissionDischarge'
+import EmergencyTrauma from './innerPages/EmergencyTrauma'
 
 const Routing = () => {
   return (
@@ -29,8 +34,16 @@ const Routing = () => {
       <Route path='/bookappointment' element={<BookAppointment/>}/>
       <Route path='/aboutus' element={<AboutUs/>}/>
       <Route path='/offers' element={<Offers/>}/>
-        <Route path='/admin' element={<Admin/>}/>
-        <Route path='/admindashboard' element={<AdminDashboard/>}>
+      <Route path='/addmission-discharge' element={<AdmissionDischarge/>}/>
+      <Route path='/patient-responsibility' element={<PatientsRespons/>}/>
+      <Route path='/patient-rights' element={<PatientsRights/>}/>
+      <Route path='/vistior-info' element={<VisitorsInfo/>}/>
+      <Route path='/emergency-trauma-care' element={<EmergencyTrauma/>}/>
+
+
+      {/* Admin Routing  */}
+      <Route path='/admin' element={<Admin/>}/>
+      <Route path='/admindashboard' element={<AdminDashboard/>}>
            <Route path='addtreatments' element={<AddTreatments/>}/>
            <Route path='updatetreatments' element={<UpdateTreatments/>}/>
            <Route path='adddoctors' element={<AddDoctors/>}/>
