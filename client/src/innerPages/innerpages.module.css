@@ -181,6 +181,68 @@ margin-bottom: 0px;
     margin: 10px 0px;
     font-size: 18px;
 }
+.careers{
+    padding: 70px 0px;
+}
+.careers h1{
+    text-align: center;
+    font-size: 38px;
+    color: black;
+    font-weight: 700;
+}
+.careers h2{
+    text-align: center;
+    font-style: 28px;
+    color: #980707;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+.careers h3{
+    font-size: 20px;
+    color: black;
+    font-weight: 600;
+}
+.careers h4{
+    font-size: 18px;
+    color: #3a3a3a;
+    font-weight: 500;
+    margin-bottom: 18px;
+}
+.careers form input{
+    width: 100%;
+    padding: 6px 10px;
+    border: 1px solid #3a3a3a;
+    margin-bottom: 12px;
+    border-radius: 4px;
+}
+.careers form input:focus{
+    outline: 1px solid #980707;
+}
+.careers form select{
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 6px;
+}
+.careers form textarea{
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    height: 150px;
+}
+.careers form button{
+    background-color: #980707;
+    border: 2px solid #980707;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    font-weight: 700;
+    padding: 10px 35px;
+    transition: 300ms;
+}
+.careers form button:hover{
+    background-color: white;
+    color: #980707;
+}
 @media (max-width: 576px){
     .appointment h1{
         font-size: 34px;

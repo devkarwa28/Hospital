@@ -24,6 +24,7 @@ import PatientsRights from './innerPages/PatientsRights'
 import VisitorsInfo from './innerPages/VisitorsInfo'
 import AdmissionDischarge from './innerPages/AdmissionDischarge'
 import EmergencyTrauma from './innerPages/EmergencyTrauma'
+import Careers from './innerPages/Careers'
 
 const Routing = () => {
   return (
@@ -39,6 +40,7 @@ const Routing = () => {
       <Route path='/patient-rights' element={<PatientsRights/>}/>
       <Route path='/vistior-info' element={<VisitorsInfo/>}/>
       <Route path='/emergency-trauma-care' element={<EmergencyTrauma/>}/>
+      <Route path='/careers' element={<Careers/>}/>
 
 
       {/* Admin Routing  */}

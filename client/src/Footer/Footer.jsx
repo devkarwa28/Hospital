@@ -21,12 +21,12 @@ const Footer = () => {
                         </NavLink>
                     </li>
                      <li>
-                        <NavLink>
+                        <NavLink to="/bookappointment">
                             Book An Appointment
                         </NavLink>
                     </li>
                      <li>
-                        <NavLink>
+                        <NavLink to="/contactus">
                             Make An Enquiry
                         </NavLink>
                     </li>
@@ -36,7 +36,7 @@ const Footer = () => {
                         </NavLink>
                     </li>
                      <li>
-                        <NavLink>
+                        <NavLink to='/careers'>
                             Careers
                         </NavLink>
                     </li>
