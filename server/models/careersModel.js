@@ -25,7 +25,7 @@ let careersSchema = new mongoose.Schema({
         type: Number,
         required: true,
     },
-    qualification:{
+    qual:{
         type: String,
         required:true,
     },

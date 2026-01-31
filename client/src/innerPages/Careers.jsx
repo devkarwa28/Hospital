@@ -12,7 +12,7 @@ const Careers = () => {
   const [dob, setDob] = useState("");
   const [department, setDepartment] = useState("");
   const [exp, setExp] = useState("");
-  const [qualifiaction, setQualifiaction] = useState("");
+  const [qual, setQual] = useState("");
   const [passingYear, setPassingYear] = useState("");
   const [college, setCollege] = useState("");
   const [location, setLocation] = useState("");
@@ -114,10 +114,10 @@ const Careers = () => {
             <div className="col-lg-6">
               <input
                 type="text"
-                name="qualification"
+                name="qual"
                 placeholder="Education Qualification (latest)"
-                value={qualifiaction}
-                onChange={(e) => setQualifiaction(e.target.value)}
+                value={qual}
+                onChange={(e) => setQual(e.target.value)}
               />
             </div>
 

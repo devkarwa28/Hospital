@@ -1,5 +1,5 @@
 let express = require('express');
-let Careers = require('../models/careersModel')
+let Careers = require('../models/careersModel');
 
 const careersRouting = express.Router();
 
