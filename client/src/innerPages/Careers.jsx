@@ -19,7 +19,7 @@ const Careers = () => {
   const [message, setMessage] = useState("");
   const submitHandler = (e) =>{
     e.preventDefault();
-    axios.post(`${API}/careers`,{cname,mobile,email,dob,department,exp,qualifiaction,passingYear,college,location,message})
+    axios.post(`${API}/careers`,{cname,mobile,email,dob,department,exp,qual,passingYear,college,location,message})
     .then((res)=>{
       alert("Your Application Have Been Submitted Sucessfully");
     })
