@@ -243,6 +243,81 @@ margin-bottom: 0px;
     background-color: white;
     color: #980707;
 }
+.patient_login{
+        height: 89vh;
+        display: flex;
+  align-items: center;
+  justify-content: center;
+    }
+.patient_login h1{
+    font-size: 42px;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.patient_login h1 span{
+    color: #980707;
+}
+.patient_login form{
+    width: 500px;
+    border: 5px solid #980707;
+    border-radius: 10px;
+    padding: 25px 30px;
+    margin: auto;
+    box-shadow: 0px 0px 18px #3a3a3a;
+
+}
+.patient_login form input{
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 2px solid #3a3a3a;
+}
+.patient_login form input:focus{
+    outline: 0px;
+    border: 2px solid #980707;
+}
+.patient_login form button{
+    padding: 5px 10px;
+    color: white;
+    background-color: #980707;
+    border: 2px solid #980707;
+    font-weight: 700;
+    border-radius: 4px;
+}
+.or_divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.or_divider::before,
+.or_divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #ccc;
+}
+
+.or_divider span {
+  padding: 0 12px;
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+}
+.patient_login form h2{
+    font-size: 18px;
+    text-align: center;
+}
+.patient_login form h2 a{
+    color: #980707;
+}
+.patient_login form select{
+    width: 100%;
+    padding: 8px 10px;
+    margin-bottom: 16px;
+}
 @media (max-width: 576px){
     .appointment h1{
         font-size: 34px;
@@ -281,5 +356,28 @@ margin-bottom: 0px;
     }
     .appointment form textarea:focus{
         outline: 2px solid #980707;
+    }
+    .admission{
+        padding: 30px 0px;
+    }
+    .admission img{
+        width: 100%;
+    }
+    .photo_box h1{
+        font-size: 30px;
+        padding: 0px 52px 0px 16px;
+        margin: 18px 0px 20px 0px;
+    }
+    .photo_box h2{
+        padding-left: 22px;
+    }
+    .rights ul{
+        padding: 0px 20px;
+    }
+    .careers{
+        padding: 40px 0px;
+    }
+    .careers h1{
+        font-size: 28px;
     }
 }

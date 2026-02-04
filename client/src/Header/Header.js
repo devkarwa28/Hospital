@@ -16,9 +16,11 @@ const Header = () => {
                 <h2 className="mb-0">Hospital</h2>
               </NavLink>
             </Navbar.Brand>
+           
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="ms-auto">
+
                 <ul className="d-lg-flex mb-0">
                   <li>
                     <Nav.Item>
@@ -51,54 +53,15 @@ const Header = () => {
                   </Nav.Item>
                   </li>
                 </ul>
+                 <NavLink to='/patient-login'>
+                  <button className={headerstyles.login_btn}>
+                  Login
+                </button>
+                </NavLink>
               </Nav>
             </Navbar.Collapse>
           </Container>
         </Navbar>
-
-        {/* <nav className="px-5 d-flex justify-content-between py-2">
-            <div>
-                <NavLink className="text-decoration-none text-dark">
-                    <h2 className="mb-0">Hospital</h2>
-                </NavLink>
-            </div>
-            <div>
-                <ul className="d-flex mb-0">
-                    <li>
-                        <NavLink to='/' >
-                            Home
-                        </NavLink>
-                    </li>
-
-                    <li>
-                        <NavLink to='/aboutus' >
-                            About Us
-                        </NavLink>
-                    </li>
-                    
-                    <li>
-                        <NavLink to='/treatments'>
-                            Treatsments
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to='/bookappointment'>
-                            Book Appointment
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to='/offers'>
-                          Offers
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to='/contactus'>
-                            Contact Us
-                        </NavLink>
-                    </li>
-                </ul>
-            </div>
-        </nav> */}
       </header>
     </>
   );

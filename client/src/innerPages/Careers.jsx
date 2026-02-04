@@ -32,6 +32,7 @@ const Careers = () => {
       <div className="container">
         <h1>COME BUILD A BRIGHT FUTURE</h1>
         <h2>Let your ambition scale new heights.</h2>
+        
         <form onSubmit={submitHandler}>
           <h3>Join us to make the world a healthier place</h3>
           <h4>

@@ -5,7 +5,7 @@ const EmergencyTrauma = () => {
   return (
     <section className={innerstyles.admission}>
             <div className="container">
-                <div className="row">
+                <div className="row flex-column-reverse flex-lg-row">
                     <div className="col-lg-7">
                         <img src="images/srh-facility.jpg" alt="" />
                     </div>

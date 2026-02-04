@@ -7,7 +7,7 @@ const Footer = () => {
         <section className={footerstyles.mainfooter}>
             <div className="container">
                 <div className="row">
-                <div className="col-lg-3">
+                <div className="col-6 col-lg-3">
                 <h2>Quick Links</h2>
                 <ul>
                     <li>
@@ -42,7 +42,7 @@ const Footer = () => {
                     </li>
                 </ul>
             </div>
-            <div className="col-lg-3">
+            <div className="col-6 col-lg-3">
                 <h2>Multispeciality</h2>
                 
                 <ul>
@@ -84,7 +84,7 @@ const Footer = () => {
                     </li>
                 </ul>
             </div>
-            <div className="col-lg-3">
+            <div className="col-6 col-lg-3">
                 <h2>Patient Care</h2>
                 <ul>
                     <li>

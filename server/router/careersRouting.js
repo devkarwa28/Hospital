@@ -14,4 +14,14 @@ careersRouting.post("/careers",async (req,res)=>{
         res.status(500).json({ error: "Server error" });
     }
 });
+careersRouting.get("/careers",async (req,res)=>{
+    try{
+        let careers = await Careers.find()
+        res.send(careers)
+    }
+    catch(err){
+        console.log(err)
+        res.status(500).json({error: "Server error"});
+    }
+})
 module.exports = careersRouting;

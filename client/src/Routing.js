@@ -25,6 +25,8 @@ import VisitorsInfo from './innerPages/VisitorsInfo'
 import AdmissionDischarge from './innerPages/AdmissionDischarge'
 import EmergencyTrauma from './innerPages/EmergencyTrauma'
 import Careers from './innerPages/Careers'
+import PatientLogin from './innerPages/PatientLogin'
+import PatientRegister from './innerPages/PatientRegister'
 
 const Routing = () => {
   return (
@@ -41,7 +43,8 @@ const Routing = () => {
       <Route path='/vistior-info' element={<VisitorsInfo/>}/>
       <Route path='/emergency-trauma-care' element={<EmergencyTrauma/>}/>
       <Route path='/careers' element={<Careers/>}/>
-
+      <Route path='/patient-login' element={<PatientLogin/>}/>
+      <Route path='/patient-register' element={<PatientRegister/>}/>
 
       {/* Admin Routing  */}
       <Route path='/admin' element={<Admin/>}/>

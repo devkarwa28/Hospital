@@ -7,6 +7,7 @@ const doctorRouting = require("./router/doctorRouting");
 const appointmentRouting = require("./router/appointmentRouting");
 const contactRouting = require("./router/contactRouting");
 const careersRouting = require("./router/careersRouting");
+const patientRouting = require("./router/patientRouting");
 
 let app = express();
 require("./db/dbconfig");
@@ -31,6 +32,7 @@ app.use("/", doctorRouting);
 app.use("/", appointmentRouting);
 app.use("/", contactRouting);
 app.use("/",careersRouting);
+app.use("/",patientRouting);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
