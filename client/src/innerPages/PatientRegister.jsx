@@ -1,9 +1,11 @@
 import { useState } from "react";
 import innerstyles from "./innerpages.module.css";
 import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 
 const PatientRegister = () => {
     const API = process.env.REACT_APP_API_URL;
+    const navigate = useNavigate();
 
     const [pname,setPname] = useState("");
     const [email,setEmail] = useState("");
@@ -11,11 +13,20 @@ const PatientRegister = () => {
     const [dob,setDob] = useState();
     const [gender,setGender] = useState("");
     const [password,setPassword] = useState("");
+
     const submitHandler = (e) =>{
         e.preventDefault();
         axios.post(`${API}/patient-signup`,{pname,email,mobile,dob,gender,password})
         .then((res)=>{
             alert("Patient Registerd Successfully")
+            setPname("")
+            setEmail("")
+            setMobile("")
+            setDob("")
+            setGender("")
+            setPassword("")
+            navigate('/patient-login')
+            
         })
         .catch((err)=>{
             alert("Could Not Register")
