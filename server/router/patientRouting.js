@@ -21,4 +21,4 @@ patientRouting.post('/patient-signup',async (req,res)=>{
         res.status(500).json({error: "Server Error"})
     }
 })
-module.exports = patientRouting();
+module.exports = patientRouting;
