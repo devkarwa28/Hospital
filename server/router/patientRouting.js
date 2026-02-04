@@ -11,6 +11,7 @@ patientRouting.post('/patient-signup',async (req,res)=>{
             email : req.body.email,
             mobile: req.body.mobile,
             dob: req.body.dob,
+            gender: req.body.gender,
             password: bcrypt.hashSync(req.body.password,12)
         })
         let result =  await patientSignup.save();

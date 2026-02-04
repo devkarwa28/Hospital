@@ -20,10 +20,14 @@ let patientSchema = new mongoose.Schema({
     gender:{
         type: String,
         required: true,
-        enum: ["male", "female", "other"],
+        enum: ["male", "female", "transgender"],
     },
     dob:{
         type: Date,
+        required: true,
+    },
+    password:{
+        type: String,
         required: true,
     },
     role:{
