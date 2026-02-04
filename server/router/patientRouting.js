@@ -10,7 +10,7 @@ patientRouting.post('/patient-signup',async (req,res)=>{
             pname: req.body.pname,
             email : req.body.email,
             mobile: req.body.mobile,
-            dob: req.body.dob,
+            dob: new Date(req.body.dob),
             gender: req.body.gender,
             password: bcrypt.hashSync(req.body.password,12)
         })
