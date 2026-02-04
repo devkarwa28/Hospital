@@ -18,7 +18,7 @@ const PatientRegister = () => {
             alert("Patient Registerd Successfully")
         })
         .catch((err)=>{
-            alert("Could Not Register Patient........!!!!")
+            alert("Could Not Register")
         })
     } 
     return (
