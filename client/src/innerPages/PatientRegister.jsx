@@ -8,7 +8,7 @@ const PatientRegister = () => {
     const [pname,setPname] = useState("");
     const [email,setEmail] = useState("");
     const [mobile,setMobile] = useState("");
-    const [dob,setDob] = useState("");
+    const [dob,setDob] = useState();
     const [gender,setGender] = useState("");
     const [password,setPassword] = useState("");
     const submitHandler = (e) =>{
