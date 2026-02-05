@@ -21,7 +21,7 @@ const BookAppointment = () => {
     medicalConcern:"",
   })
   const changeHandler = (e) =>{
-    setData({[e.target.name]: e.target.value})
+    setData({...data,[e.target.name]: e.target.value})
   }
   // Alert State Management 
   const [alertType, setAlertType] = useState("success");
