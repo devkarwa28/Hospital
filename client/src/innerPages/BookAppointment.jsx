@@ -17,7 +17,7 @@ const BookAppointment = () => {
     expa:"",
     service:"",
     appointDate:"",
-    timeing:"",
+    timing:"",
     medicalConcern:"",
   })
   const changeHandler = (e) =>{
@@ -42,7 +42,7 @@ const BookAppointment = () => {
     expa:"",
     service:"",
     appointDate:"",
-    timeing:"",
+    timing:"",
     medicalConcern:"",
       })
         setTimeout(() => setShowAlert(false), 5000);
@@ -141,7 +141,7 @@ const BookAppointment = () => {
                   />
                 </div>
                 <div className="col-6 col-lg-3">
-                  <select name="timing" value={data.timeing} onChange={changeHandler}>
+                  <select name="timing" value={data.timing} onChange={changeHandler}>
                     <option value="">Time</option>
                     <option value="Morning">Morning</option>
                     <option value="Afternoon">Afternoon</option>
