@@ -8,37 +8,43 @@ const BookAppointment = () => {
   const API = process.env.REACT_APP_API_URL;
 
   // Form State Management
-  const [pName, setPname] = useState("");
-  const [gender, setGender] = useState("");
-  const [mobile, setMobile] = useState("");
-  const [email, setEmail] = useState("");
-  const [address, setAddress] = useState("");
-  const [expa, setExpa] = useState("");
-  const [service, setService] = useState("");
-  const [appointDate, setAppointDate] = useState("");
-  const [timeing, setTimeing] = useState("");
-  const [medicalConcern, setMedicalConcern] = useState("");
-
+  const [data,setData] = useState({
+    pName: "",
+    gender: "",
+    mobile:"",
+    email:"",
+    address:"",
+    expa:"",
+    service:"",
+    appointDate:"",
+    timeing:"",
+    medicalConcern:"",
+  })
+  const changeHandler = (e) =>{
+    setData({[e.target.name]: e.target.value})
+  }
   // Alert State Management 
   const [alertType, setAlertType] = useState("success");
   const [showAlert, setShowAlert] = useState(false);
 
   const submitHandler = (event) => {
     event.preventDefault();
-    axios.post(`${API}/appointments`, { pName, gender, mobile, email, address, expa, service, appointDate, timeing, medicalConcern })
+    axios.post(`${API}/appointments`, data)
       .then((res) => {
         setAlertType("success");
       setShowAlert(true);
-        setPname("");
-        setGender("");
-        setMobile("");
-        setEmail("");
-        setAddress("");
-        setExpa("");
-        setService("");
-        setAppointDate("");
-        setTimeing("");
-        setMedicalConcern("");
+      setData({
+         pName: "",
+    gender: "",
+    mobile:"",
+    email:"",
+    address:"",
+    expa:"",
+    service:"",
+    appointDate:"",
+    timeing:"",
+    medicalConcern:"",
+      })
         setTimeout(() => setShowAlert(false), 5000);
       })
       .catch((err) => {
@@ -70,14 +76,14 @@ const BookAppointment = () => {
                 <div className="col-12 col-lg-6">
                   <input
                     type="text"
-                    value={pName}
-                    onChange={(e) => setPname(e.target.value)}
+                    value={data.pName}
+                    onChange={changeHandler}
                     name="pName"
                     placeholder="Patient Name"
                   />
                 </div>
                 <div className="col-12 col-lg-6">
-                  <select name="gender" value={gender} onChange={(e) => setGender(e.target.value)}>
+                  <select name="gender" value={data.gender} onChange={changeHandler}>
                     <option value="">Select Gender</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
@@ -85,16 +91,16 @@ const BookAppointment = () => {
                   </select>
                 </div>
                 <div className="col-12 col-lg-6">
-                  <input type="text" name="mobile" value={mobile} onChange={(e) => setMobile(e.target.value)} placeholder="Mobile No." />
+                  <input type="text" name="mobile" value={data.mobile} onChange={changeHandler} placeholder="Mobile No." />
                 </div>
                 <div className="col-12 col-lg-6">
-                  <input type="text" name="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email Address" />
+                  <input type="text" name="email" value={data.email} onChange={changeHandler} placeholder="Email Address" />
                 </div>
                 <div className="col-12 col-lg-6">
-                  <input type="text" name="address" value={address} onChange={(e) => setAddress(e.target.value)} placeholder="Address" />
+                  <input type="text" name="address" value={data.address} onChange={changeHandler} placeholder="Address" />
                 </div>
                 <div className="col-12 col-lg-6">
-                  <select name="expa" value={expa} onChange={(e) => setExpa(e.target.value)}>
+                  <select name="expa" value={data.expa} onChange={changeHandler}>
                     <option value="">You are a Existing Patient</option>
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
@@ -104,7 +110,7 @@ const BookAppointment = () => {
               <h4 className="mt-3">Appointment Details</h4>
               <div className="row">
                 <div className="col-12 col-lg-6">
-                  <select name="service" value={service} onChange={(e) => setService(e.target.value)}>
+                  <select name="service" value={data.service} onChange={changeHandler}>
                     <option value="">Select Service</option>
                     <option value="general_medicine">General Medicine</option>
                     <option value="general_surgery">General Surgery</option>
@@ -130,12 +136,12 @@ const BookAppointment = () => {
                   <input
                     type="date"
                     name="appointDate"
-                    value={appointDate}
-                    onChange={(e) => setAppointDate(e.target.value)}
+                    value={data.appointDate}
+                   onChange={changeHandler}
                   />
                 </div>
                 <div className="col-6 col-lg-3">
-                  <select name="timing" value={timeing} onChange={(e) => setTimeing(e.target.value)}>
+                  <select name="timing" value={data.timeing} onChange={changeHandler}>
                     <option value="">Time</option>
                     <option value="Morning">Morning</option>
                     <option value="Afternoon">Afternoon</option>
@@ -145,8 +151,8 @@ const BookAppointment = () => {
                 <div className="col-12">
                   <textarea
                     name="medicalConcern"
-                    value={medicalConcern}
-                    onChange={(e) => setMedicalConcern(e.target.value)}
+                    value={data.medicalConcern}
+                    onChange={changeHandler}
                     placeholder="Medical Concern"
                   ></textarea>
                 </div>
