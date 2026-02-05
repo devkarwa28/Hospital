@@ -32,7 +32,7 @@ let appointmentSchema = new moongose.Schema({
         type: Date,
         required : true,
     },
-    timeing:{
+    timing:{
         type: String,
         required : true
     },
